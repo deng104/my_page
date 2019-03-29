@@ -1,5 +1,5 @@
 """
-自定义分页组件
+自定义分页组件, 
 可以返回分页的数据和分页的HTML代码
 """
 from django.http import QueryDict
@@ -80,7 +80,7 @@ class Pagination(object):
         # 添加首页
         self.query_dict['page'] = 1
         page_list.append('<li><a href="{}?{}">首页</a></li>'.format(self.url_prefix, self.query_dict.urlencode()))
-        # 添加上一
+        # 添加上一页
         if self.current_page - 1 < 1:  # 已经到头啦，不让点上一页啦
             page_list.append(
                 '<li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>')
